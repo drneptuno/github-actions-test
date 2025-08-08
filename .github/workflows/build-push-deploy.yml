@@ -1,0 +1,29 @@
+name: Build, Push and Deploy (Simulación)
+
+on:
+  push:
+    branches:
+      - test-branch
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Simular build
+        run: echo "Construyendo imagen..."
+
+      - name: Simular push a GCR
+        run: echo "Pusheando imagen al registry..."
+
+  deploy-to-k8s:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simular conexión a Kubernetes
+        run: echo "Conectando al cluster..."
+
+      - name: Simular despliegue
+        run: echo "Desplegando aplicación en Kubernetes..."
