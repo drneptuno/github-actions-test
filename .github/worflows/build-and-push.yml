@@ -1,0 +1,19 @@
+name: Build and Push (Simulación)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Simular build
+        run: echo "Construyendo imagen..."
+
+      - name: Simular push a GCR
+        run: echo "Pusheando imagen al registry..."
